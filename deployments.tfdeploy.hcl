@@ -9,7 +9,7 @@ deployment "production" {
   inputs = {
     region         = "us-east-1"
     role_arn       = "arn:aws:iam::285942769742:role/hcp-oidc"
-    identity_token = identity_token.aws.jwt_filename
+    identity_token = identity_token.aws.jwt
     default_tags   = { stacks-preview-example = "lambda-api-gateway-stack" }
   }
 }
