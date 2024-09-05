@@ -13,3 +13,12 @@ deployment "production" {
     default_tags   = { stacks-preview-example = "lambda-api-gateway-stack" }
   }
 }
+
+deployment "dev" {
+  inputs = {
+    region         = "us-east-2"
+    role_arn       = "arn:aws:iam::285942769742:role/hcp-oidc"
+    identity_token = identity_token.aws.jwt
+    default_tags   = { stacks-preview-example = "lambda-api-gateway-stack" }
+  }
+}
